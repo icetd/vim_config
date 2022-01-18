@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/tiandeng/share/C/10_point'
+let g:netrw_dirhist_2='/home/tiandeng/share/STM32F429/u-boot-2021.10/board/st/stm32f429-evaluation'
+let g:netrw_dirhist_1='/home/tiandeng/share/4412/4412_SCP_5.3.18/u-boot-2017.11'
