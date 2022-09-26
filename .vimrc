@@ -62,11 +62,17 @@ nmap wm :WMToggle<cr>
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'itchyny/lightline.vim'
+
+Plug 'Valloric/YouCompleteMe'
+
 call plug#end()
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+"                             \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_semantic_triggers={'c,cpp,python,go,rust': ['re!\w{2}'],} " 开启语法补全，输入两个字符时开启
