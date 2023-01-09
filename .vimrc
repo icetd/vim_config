@@ -1,4 +1,3 @@
-
 "-------------------------------------------------------------------------------------
 " general
 "-------------------------------------------------------------------------------------
@@ -33,9 +32,9 @@ set laststatus=2    "显示状态栏信息
 set ai              "autoindent（继承前一行的缩进方式，适用于多行注释）
 set si              "smartindent（为C程序提供自动缩进）
 set cindent         "C风格缩进
-set tabstop=8       "tab键宽度
-set shiftwidth=8    "统一缩进
-set softtabstop=8   "统一缩进
+set tabstop=4       "tab键宽度
+set shiftwidth=4    "统一缩进
+set softtabstop=4   "统一缩进
 set noexpandtab       "expandtab 使用空格替换 TAB ; noexpandtab 实际使用tab字符，不要用空格字符替换
 set smarttab        "行首段首自动使用tab
 
@@ -61,26 +60,30 @@ nmap wm :WMToggle<cr>
 " plug
 "-------------------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
-
 Plug 'itchyny/vim-gitbranch'
-
 call plug#end()
 
 
 "-------------------------------------------------------------------------------------
-" coc-clangd
+" Nerdtree config
+"-------------------------------------------------------------------------------------
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+"-------------------------------------------------------------------------------------
+" Coc-Clangd config
 "-------------------------------------------------------------------------------------
 inoremap <silent><expr> <Tab>
-        \coc#pum#visible() ? coc#pum#confirm():
-        \"\<C-g>u\<Tab>\<c-r>=coc#on_enter()\<CR>"
-
+                \coc#pum#visible() ? coc#pum#confirm():
+                \"\<C-g>u\<Tab>\<c-r>=coc#on_enter()\<CR>"
 
 "-------------------------------------------------------------------------------------
-" lightline
+" status
 "-------------------------------------------------------------------------------------
 let g:lightline = {
       \ 'colorscheme': 'wombat',
