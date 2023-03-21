@@ -79,8 +79,8 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " Coc-Clangd config
 "-------------------------------------------------------------------------------------
 inoremap <silent><expr> <Tab>
-                \coc#pum#visible() ? coc#pum#confirm():
-                \"\<C-g>u\<Tab>\<c-r>=coc#on_enter()\<CR>"
+                \ coc#pum#visible() ? coc#pum#confirm():
+                \ "\<C-g>u\<Tab>\<c-r>=coc#on_enter()\<CR>"
 
 "-------------------------------------------------------------------------------------
 " status
